@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import Img from './3DC-logo.png';
+import logo from '../../assets/images/logo.svg';
+import Img from '../../assets/images/3DC-logo.png';
 import './App.css';
-import Countdown from './countdown.js';
+import Countdown from '../../components/Countdown/Countdown';
 import styled from 'styled-components';
 
 const HoverText = styled.h1`

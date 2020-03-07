@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import './countdown.css';
+import './Countdown.css';
 
 
 var monthsColor = {
