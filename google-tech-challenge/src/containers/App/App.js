@@ -7,8 +7,8 @@ import styled from 'styled-components';
 
 const HoverText = styled.h1`
   color: #000;
-  
-	:hover {
+
+	&:hover {
 		color: white;
 	}
 `;
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-body">
-        <div className>
+        <div className="Title-Card">
         <HoverText>
           3DC
         </HoverText>
@@ -27,14 +27,14 @@ function App() {
         </h2>
       </div>
       <Countdown timeTillDate="05 18 2020, 9:00 am" timeFormat="MM DD YYYY, h:mm a" />
-      <div class="nc-main bg-cover bg-cc">
-			<div class="bg-animation">
+      {/* <div className="nc-main bg-cover bg-cc">
+			<div className="bg-animation">
 					<div id='stars'></div>
 					<div id='stars2'></div>
 					<div id='stars3'></div>
 					<div id='stars4'></div>
 				</div>
-			</div>
+			</div> */}
     </div>
   );
 }
