@@ -1,22 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
 
-* {
-    box-sizing: border-box;
-}
 
-body {
-    background-color: #282c34;
-    font-family: 'Lato', sans-serif;
-    color: white;
-    min-height:50vh;
-    padding:200px;
-}
 
-h1 {
-    letter-spacing: 2px;
-    text-align: center;
-    text-transform: uppercase;
-}
 
 .countdown-wrapper {
     display: flex;
