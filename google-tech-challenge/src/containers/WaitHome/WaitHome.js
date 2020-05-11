@@ -1,18 +1,9 @@
 import React,{Component} from 'react';
-import styled from 'styled-components';
 import Countdown from '../../components/Countdown/Countdown'
 import {withRouter} from 'react-router-dom';
 import styles from './WaitHome.module.css';
-import StarfieldBackground from '../../components/StarfieldBackground/StarfieldBackground';
 import UncontrolledLottie from '../../components/Lotties/UncontrolledLottie';
 
-const HoverText = styled.h1`
-  color: #000;
-
-	&:hover {
-		color: white;
-	}
-`;
 class WaitHome extends Component{
 
     handleStop = (event,data)=>{

@@ -3,10 +3,7 @@ import styles from './Resources.module.css';
 export default class Resources extends Component{
     render(){
         return(
-            <div className={styles.
-            
-            
-            Resources}>
+            <div className={styles.Resources}>
                 <h1>Resources</h1>
                 <p>No experience using Google products and platforms? Not to worry! We will be providing the following resources:
  - Workshops on
