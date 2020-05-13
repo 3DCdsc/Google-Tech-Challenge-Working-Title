@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 import Step1 from './Steps/Step1';
 import Step2 from './Steps/Step2';
 import Step3 from './Steps/Step3';
+import {connect} from 'react-redux';
+import {postFormData} from '../../store/actions';
+import './Steps/Steps.css';
 import Mux from '../../hoc/Mux';
-export default class Register extends Component{
+class Register extends Component{
     constructor(props) {
         super(props);
         this.handleChange = this.handleInputChange.bind(this);
@@ -46,19 +49,23 @@ export default class Register extends Component{
 
 
     handleSubmit(event) {
+        event.preventDefault();
         let toNext = true;
         for(const property in this.state[this.state.step]){
             if(!this.state[this.state.step][property]){
                 console.log(property);
                 toNext = false;
-                event.preventDefault();
                 event.stopPropagation();
             }
         }
         if(toNext){
+            if(this.state.step===3){
+                this.props.sendForm(this.state[1],this.state[2],this.state[3]);
+            }
             this.nextStep();
         }
         
+
     }
     nextStep(){
         this.setState({
@@ -84,7 +91,7 @@ export default class Register extends Component{
                 step = <Step3 formGridTypeResponse={this.state[3].formGridTypeResponse} formGridTypeSetting={this.state[3].formGridTypeSetting} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleBack = {this.handleBack} />
                 break;
             case 4:
-                step = <div>Thanks For Registering! We will send you a confirmation email soon with further details</div>
+                step = <h1 className="Confirmation">Thanks For Registering! We will send you a confirmation email soon with further details</h1>
                 break;
             default:
                 return null;
@@ -97,3 +104,11 @@ export default class Register extends Component{
         
     }
 }
+
+const mapDispatchtoProps = (dispatch) =>{
+    return{
+        sendForm: (step1,step2,step3)=> dispatch(postFormData(step1.formGridName,step1.formGridEmail,step1.formGridPhoneNum,step2.formGridGetOut,step2.formGridResources,step3.formGridTypeSetting,step3.formGridTypeResponse))
+    }
+}
+
+export default connect(null,mapDispatchtoProps)(Register);
